@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rolepermissions',
+    'django_q',
     'users',
     'payments'
 ]
@@ -130,3 +131,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTHORIZE_TRANSFER_ENDPOINT = "https://run.mocky.io/v3/9afa31a2-f757-470f-afe9-6f7bca511184"
 AUTHORIZE_TRANSFER_ENDPOINT = "https://run.mocky.io/v3/aa65d89c-efe6-4747-b683-5db7e598054d"
+
+Q_CLUSTER = {
+    "name": 'DjangoQ',
+    'workers': 4,
+    'timeout': 60, 
+    'retry': 300,
+    'orm': 'default'
+}
